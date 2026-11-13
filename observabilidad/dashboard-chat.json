@@ -12,7 +12,7 @@
     {
       "collapsed": false,
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 6,
         "x": 0,
         "y": 0
@@ -22,7 +22,7 @@
       "type": "stat",
       "datasource": {
         "type": "prometheus",
-        "uid": "Prometheus"
+        "uid": "PBFA97CFB590B2093"
       },
       "targets": [
         {
@@ -65,7 +65,7 @@
     {
       "collapsed": false,
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 9,
         "x": 6,
         "y": 0
@@ -75,7 +75,7 @@
       "type": "timeseries",
       "datasource": {
         "type": "prometheus",
-        "uid": "Prometheus"
+        "uid": "PBFA97CFB590B2093"
       },
       "targets": [
         {
@@ -92,7 +92,7 @@
     {
       "collapsed": false,
       "gridPos": {
-        "h": 4,
+        "h": 5,
         "w": 9,
         "x": 15,
         "y": 0
@@ -102,7 +102,7 @@
       "type": "timeseries",
       "datasource": {
         "type": "prometheus",
-        "uid": "Prometheus"
+        "uid": "PBFA97CFB590B2093"
       },
       "targets": [
         {
@@ -120,17 +120,17 @@
     {
       "collapsed": false,
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 12,
         "x": 0,
-        "y": 4
+        "y": 5
       },
       "id": 4,
       "title": "Latencia p95 al Subir Archivos (/api/archivos)",
       "type": "timeseries",
       "datasource": {
         "type": "prometheus",
-        "uid": "Prometheus"
+        "uid": "PBFA97CFB590B2093"
       },
       "targets": [
         {
@@ -148,17 +148,17 @@
     {
       "collapsed": false,
       "gridPos": {
-        "h": 5,
+        "h": 6,
         "w": 12,
         "x": 12,
-        "y": 4
+        "y": 5
       },
       "id": 5,
       "title": "Solo Errores (Loki)",
       "type": "logs",
       "datasource": {
         "type": "loki",
-        "uid": "Loki"
+        "uid": "P8E80F9AEF21F6940"
       },
       "targets": [
         {
@@ -175,17 +175,17 @@
     {
       "collapsed": false,
       "gridPos": {
-        "h": 7,
+        "h": 8,
         "w": 24,
         "x": 0,
-        "y": 9
+        "y": 11
       },
       "id": 6,
       "title": "Logs Centralizados del Chat (Loki Stream)",
       "type": "logs",
       "datasource": {
         "type": "loki",
-        "uid": "Loki"
+        "uid": "P8E80F9AEF21F6940"
       },
       "targets": [
         {
