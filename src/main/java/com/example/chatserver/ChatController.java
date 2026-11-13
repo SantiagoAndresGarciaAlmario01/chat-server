@@ -28,4 +28,10 @@ public class ChatController {
         log.info("Mensaje {} de {}", mensaje.tipo(), mensaje.autor());
         return mensaje.conFecha();
     }
+
+    @MessageMapping("/chat.escribiendo")
+    @SendTo("/topic/escribiendo")
+    public String escribiendo(String usuario) {
+        return usuario;
+    }
 }
