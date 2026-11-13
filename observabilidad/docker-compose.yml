@@ -1,0 +1,16 @@
+services:
+  prometheus:
+    image: prom/prometheus:v2.55.1
+    ports: ["9090:9090"]
+    volumes: ["./prometheus.yml:/etc/prometheus/prometheus.yml"]
+    extra_hosts: ["host.docker.internal:host-gateway"]
+  loki:
+    image: grafana/loki:3.2.1
+    ports: ["3100:3100"]
+  zipkin:
+    image: openzipkin/zipkin:3
+    ports: ["9411:9411"]
+  grafana:
+    image: grafana/grafana:11.3.0
+    ports: ["3000:3000"]
+    volumes: ["./datasources.yml:/etc/grafana/provisioning/datasources/datasources.yml"]

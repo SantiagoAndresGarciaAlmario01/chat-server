@@ -11,6 +11,11 @@ import org.springframework.stereotype.Controller;
 public class ChatController {
 
     private static final Logger log = LoggerFactory.getLogger(ChatController.class);
+    private final ChatMetrics metrics;
+
+    public ChatController(ChatMetrics metrics) {
+        this.metrics = metrics;
+    }
 
     @MessageMapping("/chat.unirse")
     @SendTo("/topic/sala")
@@ -18,6 +23,7 @@ public class ChatController {
         if (headers.getSessionAttributes() != null) {
             headers.getSessionAttributes().put("usuario", mensaje.autor());
         }
+        metrics.entra();
         log.info("Se unió {}", mensaje.autor());
         return new ChatMessage("UNION", mensaje.autor(), mensaje.autor() + " entró al chat", null).conFecha();
     }
@@ -25,6 +31,7 @@ public class ChatController {
     @MessageMapping("/chat.enviar")
     @SendTo("/topic/sala")
     public ChatMessage enviar(ChatMessage mensaje) {
+        metrics.mensaje(mensaje.tipo());
         log.info("Mensaje {} de {}", mensaje.tipo(), mensaje.autor());
         return mensaje.conFecha();
     }
